@@ -1,0 +1,7 @@
+[
+    {
+        "url": "https://github.com/ARMmbed/mbed-littlefs.git",
+        "path": "filesystem/littlefs",
+        "branch": "master"
+    }
+]

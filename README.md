@@ -84,6 +84,21 @@ in linux:
   cd mkfatfs
   cmake .
   make
+## 使用总结
+### 下载依赖库(littlefs)
+使用命令
+```
+python fetch.py
+````
+编译
+```
+cmake .
+make
+```
+制作镜像
+```
+./mkfatfs -c rw403b -s 131072 ./rw403b_img.bin
+```
 
 ## License
 
