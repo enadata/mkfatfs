@@ -90,6 +90,11 @@ in linux:
 ```
 python fetch.py
 ````
+sdkconfig.h中修改卷标名称
+```
+#define CONFIG_USE_VOLUME_LABEL 1
+#define CONFIG_VOLUME_LABEL "rw403dd"
+```
 编译
 ```
 cmake .

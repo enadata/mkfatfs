@@ -90,6 +90,15 @@ esp_err_t emulate_esp_vfs_fat_spiflash_mount(const char* base_path,
             goto fail;
         }
     }
+  #if CONFIG_USE_VOLUME_LABEL
+    // 调用 f_setlabel 修改卷标
+    FRESULT res = f_setlabel(CONFIG_VOLUME_LABEL); // 名称需大写，≤11字符
+    if (res == FR_OK) {
+        ESP_LOGI(TAG,"卷标修改成功！");
+    } else {
+        ESP_LOGE(TAG,"修改失败!");
+    }
+  #endif
     return ESP_OK;
 
 fail:
